@@ -2,6 +2,8 @@
 
 This app show flipping trading opportunities available in Albion game. A flipping trade is when you buy an item in city A and transport it to city B to sell it immediately to a buy order. Distance column try to represent the time travel needed for a trade, the higher the longer.
 
+[Albion Trading app](https://milambeer.github.io/albion-trading)
+
 ## Setup
 
 For those who want to run it localy, you will need `nodejs` and `yarn` installed.

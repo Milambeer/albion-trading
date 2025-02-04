@@ -3,10 +3,10 @@ import { ChangeEventHandler } from "react";
 interface CheckboxFormProps {
   title: string;
   data: Record<string, boolean>;
-  handler: ChangeEventHandler<HTMLInputElement>;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-export const CheckboxForm = ({ title, data, handler }: CheckboxFormProps) => {
+export const CheckboxForm = ({ title, data, onChange }: CheckboxFormProps) => {
   return (
     <>
       <h3 className="font-semibold text-bright-star">{title}</h3>
@@ -22,9 +22,9 @@ export const CheckboxForm = ({ title, data, handler }: CheckboxFormProps) => {
                     type="checkbox"
                     value={key}
                     className="h-4 w-4 cursor-pointer checked:border-bee-yellow checked:bg-bee-yellow"
-                    onChange={handler}
+                    onChange={onChange}
                   />
-                  <span className="ml-1">{key.replace("%20", " ")}</span>
+                  <span className="ml-1">{key}</span>
                 </label>
               </div>
             </li>

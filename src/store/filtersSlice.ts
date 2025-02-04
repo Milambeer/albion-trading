@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
-import { City } from "../type";
+import { City, Server } from "../type";
 
 export interface FilterState {
   buyCity: Record<City, boolean>;
   sellCity: Record<City, boolean>;
+  server: Server;
 }
 
 const getCityInitialState = () => ({
@@ -20,6 +21,7 @@ const getCityInitialState = () => ({
 const initialState: FilterState = {
   buyCity: getCityInitialState(),
   sellCity: getCityInitialState(),
+  server: Server.EUROPE,
 };
 
 export const filterSlice = createSlice({
@@ -38,12 +40,17 @@ export const filterSlice = createSlice({
         [action.payload]: !state.sellCity[action.payload],
       };
     },
+    updateServer: (state, action: PayloadAction<Server>) => {
+      state.server = action.payload;
+    },
   },
 });
 
-export const { toggleBuyCity, toggleSellCity } = filterSlice.actions;
+export const { toggleBuyCity, toggleSellCity, updateServer } =
+  filterSlice.actions;
 
 export const selectBuyCity = (state: RootState) => state.filter.buyCity;
 export const selectSellCity = (state: RootState) => state.filter.sellCity;
+export const selectServer = (state: RootState) => state.filter.server;
 
 export default filterSlice.reducer;

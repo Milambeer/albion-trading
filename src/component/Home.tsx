@@ -7,11 +7,14 @@ import { Filter } from "./Filter";
 import { TableView } from "./TableView";
 import { getItems } from "../api/dataProvider";
 import { Header } from "./Header";
+import { selectServer } from "../store/filtersSlice";
+import { useAppSelector } from "../store/hook";
 
 function Home() {
   const [processedData, setProcessedData] = useState<ItemTrade[]>([]);
   const [progress, setProgress] = useState<number | undefined>(undefined);
   const [pullDataDate, setPullDataDate] = useState<Date | undefined>(undefined);
+  const server = useAppSelector(selectServer);
 
   const handleRetrieveData = useCallback(async () => {
     setProcessedData([]);
@@ -34,7 +37,7 @@ function Home() {
 
     for (const collectionIds of parsedDatabase) {
       setProgress((count * 100) / parsedDatabase.length);
-      const resultData = await getItems({ collectionIds });
+      const resultData = await getItems({ collectionIds, server });
 
       const cleanedDataFragment = resultData.data.map((item: ItemAPI) =>
         Object.keys(item).reduce((newItem, currValue) => {
@@ -53,7 +56,7 @@ function Home() {
     setProcessedData(
       processedDataLocal.flat().sort(compare<ItemTrade>("profit")).reverse(),
     );
-  }, []);
+  }, [server]);
 
   return (
     <div className="min-h-screen bg-dynamic-black">

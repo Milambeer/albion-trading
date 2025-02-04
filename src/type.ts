@@ -47,3 +47,9 @@ export enum City {
   Caerleon = "Caerleon",
   BlackMarket = "Black Market",
 }
+
+export enum Server {
+  EUROPE = "europe",
+  AMERICA = "west",
+  ASIA = "east",
+}

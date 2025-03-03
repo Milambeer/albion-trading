@@ -53,3 +53,11 @@ export enum Server {
   AMERICA = "west",
   ASIA = "east",
 }
+
+export enum Rarity {
+  NORMAL,
+  UNCOMMON,
+  RARE,
+  EXCPETIONAL,
+  PRISTINE,
+}

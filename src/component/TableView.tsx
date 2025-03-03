@@ -1,6 +1,7 @@
 import { ItemTrade } from "../type";
 import { useAppSelector } from "../store/hook";
 import { selectBuyCity, selectSellCity } from "../store/filtersSlice";
+import { getRarity, getTier, readableId } from "../helper";
 
 interface TableViewProps {
   data: ItemTrade[];
@@ -9,7 +10,9 @@ interface TableViewProps {
 const TAB_COLUMN = [
   "Item",
   "Profit",
+  "Tier",
   "Quality",
+  "Rarity",
   "Distance",
   "Buy city",
   "Sell city",
@@ -38,13 +41,13 @@ export const TableView = ({ data }: TableViewProps) => {
             .filter((item) => buyCity[item.buyCity] && sellCity[item.sellCity])
             .map((row) => (
               <tr key={row.itemId}>
-                <td className="px-6 py-4">
-                  {row.itemId.slice(0, row.itemId.length - 2)}
-                </td>
+                <td className="px-6 py-4">{readableId(row.itemId)}</td>
                 <td className="px-6 py-4">{row.profit}</td>
-                <td>
+                <td className="px-6 py-4">{getTier(row.itemId)}</td>
+                <td className="px-6 py-4">
                   {row.itemId.slice(row.itemId.length - 2, row.itemId.length)}
                 </td>
+                <td className="px-6 py-4">{getRarity(row.itemId)}</td>
                 <td className="px-6 py-4">{row.distance}</td>
                 <td className="px-6 py-4">{row.buyCity}</td>
                 <td className="px-6 py-4">{row.sellCity}</td>

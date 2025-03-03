@@ -1,10 +1,26 @@
 import { DISTANCE, FRESHNESS_LIMIT_HOUR } from "./data/constant";
-import { Item, ItemTrade } from "./type";
+import { Item, ItemTrade, Rarity } from "./type";
 
+const MAPPING_RARITY = Object.values(Rarity) as Rarity[];
 const getId = (item: Item) => `${item.itemId}Q${item.quality}`;
 
 export const toCamelCase = (str: string) => {
   return str.replace(/_(\w)/g, (_match, group) => group.toUpperCase());
+};
+
+export const readableId = (str: string) => {
+  return str.replace(/T\d|@\d|Q\d|LEVEL\d/g, "").replace(/_/g, " ");
+};
+
+export const getTier = (str: string) => {
+  const match = str.match(/T\d/);
+  return match && match.length ? match[0] : "";
+};
+
+export const getRarity = (str: string) => {
+  const match = str.match(/@(\d)/);
+  const rarityId = match && match.length && parseInt(match[1]);
+  return rarityId ? MAPPING_RARITY[rarityId] : "";
 };
 
 export const compare =

@@ -12,6 +12,11 @@ export interface ItemAPI {
   buy_price_max_date: string;
 }
 
+export interface GoldAPI {
+  price: number;
+  timestamp: string;
+}
+
 export interface Item {
   itemId: string;
   city: City;

@@ -43,6 +43,11 @@ export interface ItemTrade {
   sellPriceTime: number;
 }
 
+export interface CustomError {
+  title: string;
+  content: string;
+}
+
 export enum City {
   FortSterling = "Fort Sterling",
   Martlock = "Martlock",
@@ -65,4 +70,8 @@ export enum Rarity {
   RARE,
   EXCPETIONAL,
   PRISTINE,
+}
+
+export enum ToasterTemplate {
+  "ERROR",
 }

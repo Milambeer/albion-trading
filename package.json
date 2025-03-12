@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@eslint/js": "^9.17.0",
+    "@heroicons/react": "^2.2.0",
     "@reduxjs/toolkit": "^2.5.1",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
@@ -30,6 +31,7 @@
     "prettier-plugin-tailwindcss": "^0.6.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-error-boundary": "^5.0.0",
     "react-redux": "^9.2.0",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.4.17",

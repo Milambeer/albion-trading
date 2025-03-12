@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import filterReducer from "./filtersSlice";
+import notificationReducer from "./notificationSlice";
 
 export const store = configureStore({
   reducer: {
     filter: filterReducer,
+    notification: notificationReducer,
   },
 });
 

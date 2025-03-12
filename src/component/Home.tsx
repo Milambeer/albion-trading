@@ -10,7 +10,7 @@ import { Header } from "./Header";
 import { selectServer } from "../store/filtersSlice";
 import { useAppSelector } from "../store/hook";
 
-function Home() {
+export const Home = () => {
   const [processedData, setProcessedData] = useState<ItemTrade[]>([]);
   const [progress, setProgress] = useState<number | undefined>(undefined);
   const [pullDataDate, setPullDataDate] = useState<Date | undefined>(undefined);
@@ -71,6 +71,4 @@ function Home() {
       </div>
     </div>
   );
-}
-
-export default Home;
+};

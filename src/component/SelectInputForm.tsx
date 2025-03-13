@@ -18,16 +18,18 @@ export const SelectInputForm = ({
   return (
     <div className={`mx-auto max-w-sm ${className}`}>
       {label && (
-        <label className="mb-8 font-semibold text-bright-star">{label}</label>
+        <label className="mb-8 font-semibold text-white">{label}</label>
       )}
       <select
         onChange={onChange}
-        className="block w-full rounded-lg border border-bright-star bg-dark-gray p-2 text-sm text-bright-star"
+        className="block w-full cursor-pointer bg-inherit text-sm text-white outline-none"
         defaultValue={value}
       >
         {options &&
           Object.keys(options).map((optionKey) => (
-            <option value={options[optionKey]}>{optionKey}</option>
+            <option className="bg-dark-gray" value={options[optionKey]}>
+              {optionKey}
+            </option>
           ))}
       </select>
     </div>

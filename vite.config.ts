@@ -1,9 +1,11 @@
-import { defineConfig } from "vite";
+import { defineConfig, mergeConfig } from "vite";
+import { defineConfig as defineConfigVitest } from "vitest/config";
+
 import react from "@vitejs/plugin-react";
 import tailwindcss from "tailwindcss";
 
 // https://vite.dev/config/
-export default defineConfig({
+const viteConfig = defineConfig({
   plugins: [react()],
   base: "/albion-trading/",
   css: {
@@ -12,3 +14,9 @@ export default defineConfig({
     },
   },
 });
+
+const vitestConfig = defineConfigVitest({
+  test: { environment: "jsdom" },
+});
+
+export default mergeConfig(viteConfig, vitestConfig);

@@ -1,7 +1,7 @@
-import { ItemTrade } from "../type";
-import { useAppSelector } from "../store/hook";
-import { selectBuyCity, selectSellCity } from "../store/filtersSlice";
-import { getRarity, getTier, readableId } from "../helper";
+import { ItemTrade } from "../../type";
+import { useAppSelector } from "../../store/hook";
+import { selectBuyCity, selectSellCity } from "../../store/filtersSlice";
+import { getRarity, getTier, readableId } from "../../helper";
 
 interface TableViewProps {
   data: ItemTrade[];

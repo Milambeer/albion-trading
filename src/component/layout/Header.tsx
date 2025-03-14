@@ -1,12 +1,12 @@
-import logo from "../assets/logo.png";
-import gold from "../assets/gold.png";
+import logo from "../../assets/logo.png";
+import gold from "../../assets/gold.png";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
-import { getGoldPrice } from "../api/dataProvider";
-import { useAppDispatch, useAppSelector } from "../store/hook";
-import { selectServer, updateServer } from "../store/filtersSlice";
+import { getGoldPrice } from "../../api/dataProvider";
+import { useAppDispatch, useAppSelector } from "../../store/hook";
+import { selectServer, updateServer } from "../../store/filtersSlice";
 import { CircleStackIcon } from "@heroicons/react/24/outline";
-import { SelectInputForm } from "./SelectInputForm";
-import { Server } from "../type";
+import { SelectInput } from "../element/SelectInput";
+import { Server } from "../../type";
 
 export const Header = () => {
   const [goldPrice, setGoldPrice] = useState(0);
@@ -43,7 +43,7 @@ export const Header = () => {
           <CircleStackIcon className="size-6 text-white" />
         </div>
         <div className="flex flex-col justify-center">
-          <SelectInputForm
+          <SelectInput
             options={Server}
             value={server}
             onChange={handleSelectServer}

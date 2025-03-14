@@ -1,6 +1,6 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ToasterTemplate } from "../type";
+import { ToasterTemplate } from "../../type";
 import { useEffect, useState } from "react";
 
 const TEMPLATES = {

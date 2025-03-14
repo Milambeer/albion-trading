@@ -1,14 +1,14 @@
 import { useCallback, useState } from "react";
-import { QS_MAX_CHAR } from "../data/constant";
-import { DATABASE } from "../data/database";
-import { aggregateData, compare, toCamelCase } from "../helper";
-import { Item, ItemAPI, ItemTrade } from "../type";
-import { Filter } from "./Filter";
-import { TableView } from "./TableView";
-import { getItems } from "../api/dataProvider";
-import { Header } from "./Header";
-import { selectServer } from "../store/filtersSlice";
-import { useAppSelector } from "../store/hook";
+import { QS_MAX_CHAR } from "../../data/constant";
+import { DATABASE } from "../../data/database";
+import { aggregateData, compare, toCamelCase } from "../../helper";
+import { Item, ItemAPI, ItemTrade } from "../../type";
+import { Filter } from "../composite/Filter";
+import { TableView } from "../composite/TableView";
+import { getItems } from "../../api/dataProvider";
+import { Header } from "../layout/Header";
+import { selectServer } from "../../store/filtersSlice";
+import { useAppSelector } from "../../store/hook";
 
 export const Home = () => {
   const [processedData, setProcessedData] = useState<ItemTrade[]>([]);

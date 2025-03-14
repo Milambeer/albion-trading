@@ -8,7 +8,7 @@ interface SelectInputFormProps {
   label?: string;
 }
 
-export const SelectInputForm = ({
+export const SelectInput = ({
   label,
   options,
   value,

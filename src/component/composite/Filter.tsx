@@ -1,13 +1,13 @@
 import { ChangeEvent, useCallback } from "react";
-import { CheckboxForm } from "./CheckboxForm";
-import { useAppDispatch, useAppSelector } from "../store/hook";
+import { Checkbox } from "../element/Checkbox";
+import { useAppDispatch, useAppSelector } from "../../store/hook";
 import {
   selectBuyCity,
   selectSellCity,
   toggleBuyCity,
   toggleSellCity,
-} from "../store/filtersSlice";
-import { City } from "../type";
+} from "../../store/filtersSlice";
+import { City } from "../../type";
 
 interface FilterProps {
   handleUpdateData: () => void;
@@ -61,12 +61,12 @@ export const Filter = ({
         </div>
 
         <div>
-          <CheckboxForm
+          <Checkbox
             title={"Buy City"}
             data={buyCity}
             onChange={handleBuyCity}
           />
-          <CheckboxForm
+          <Checkbox
             title={"Sell City"}
             data={sellCity}
             onChange={handleSellCity}

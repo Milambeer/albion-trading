@@ -1,7 +1,7 @@
-import { useAppSelector } from "../store/hook";
-import { selectError } from "../store/notificationSlice";
-import { ToasterTemplate } from "../type";
-import { Toaster } from "./Toaster";
+import { useAppSelector } from "../../store/hook";
+import { selectError } from "../../store/notificationSlice";
+import { ToasterTemplate } from "../../type";
+import { Toaster } from "../element/Toaster";
 
 export const Notification = () => {
   const error = useAppSelector(selectError);

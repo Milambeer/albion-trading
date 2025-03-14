@@ -1,12 +1,12 @@
 import { ChangeEventHandler } from "react";
 
-interface CheckboxFormProps {
+interface CheckboxProps {
   title: string;
   data: Record<string, boolean>;
   onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-export const CheckboxForm = ({ title, data, onChange }: CheckboxFormProps) => {
+export const Checkbox = ({ title, data, onChange }: CheckboxProps) => {
   return (
     <>
       <h3 className="font-semibold text-bright-star">{title}</h3>
